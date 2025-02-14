@@ -84,23 +84,17 @@ function SearchTask(filter) {
   const tasks = document.querySelectorAll(".todos li");
   const searchTerm = filter.trim().toLowerCase();
 
-  console.log("Total tasks found:", tasks.length);
-
   tasks.forEach(task => {
     const taskText = task.querySelector("span").textContent.toLowerCase();
-    console.log("Task text:", taskText);
     if (taskText.includes(searchTerm)) {
-      console.log("Task text:", taskText);
       task.style.display = "flex";
     } else {
-      console.log("Task does not match:", taskText);
       task.style.display = "none";
     }
   });
 }
 
 searchInput.addEventListener("input", function () {
-  console.log("Search input changed:", this.value);
   SearchTask(this.value);
 });
 
